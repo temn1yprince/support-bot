@@ -101,7 +101,7 @@ async def handle_user_message(update: Update, context: ContextTypes.DEFAULT_TYPE
             message_id=message.message_id,
             caption=caption,
         )
-      else:
+    else:
         # Стикеры, видеосообщения (кружки) и т.п. не поддерживают caption в Telegram API,
         # поэтому для них шапку отправляем отдельным сообщением перед самим стикером/кружком.
         await context.bot.send_message(chat_id=ADMIN_CHAT_ID, text=header)
